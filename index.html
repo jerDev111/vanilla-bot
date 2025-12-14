@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Milka Petshop & Accessories</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      🐾 Milka Petshop & Accessories
+    </div>
+
+    <div id="chat" class="chat-box">
+      <div class="bot-msg">
+        👋 Welcome to <b>Milka Petshop & Accessories</b>!<br>
+        We provide quality pet products for your furry friends 🐶🐱<br>
+        How can I help you today?
+      </div>
+    </div>
+
+    <div class="quick-actions">
+      <button onclick="sendQuick('products')">🛍 View Products</button>
+      <button onclick="sendQuick('price')">💰 Prices</button>
+      <button onclick="sendQuick('materials')">📦 Materials</button>
+      <button onclick="sendQuick('contact')">📞 Contact</button>
+    </div>
+
+    <div class="chat-input">
+      <input id="msg" placeholder="Type your question..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
