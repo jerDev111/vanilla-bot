@@ -1,5 +1,10 @@
 const chat = document.getElementById("chat");
 const input = document.getElementById("msg");
+const chatContainer = document.getElementById("chatContainer");
+
+function toggleChat() {
+  chatContainer.classList.toggle("show");
+}
 
 function addMessage(text, type) {
   const div = document.createElement("div");
@@ -15,7 +20,6 @@ function sendMessage() {
 
   addMessage(input.value, "user");
   input.value = "";
-
   respond(message);
 }
 
@@ -25,44 +29,41 @@ function sendQuick(type) {
 }
 
 function respond(message) {
-
   if (message.includes("product")) {
     addMessage(
-      "🐾 We sell pet accessories including:<br>" +
-      "• Dog collars<br>" +
-      "• Pet bowls<br>" +
-      "• Pet toys",
+      "🛍 <b>Our Products</b><br>" +
+      "• Dog Collar – Nylon & leather – $15<br>" +
+      "• Pet Bowl – Stainless steel – $10<br>" +
+      "• Pet Toy – Non-toxic rubber – $8",
       "bot"
     );
 
   } else if (message.includes("price")) {
     addMessage(
-      "💰 Our prices:<br>" +
-      "• Dog Collar – $15<br>" +
-      "• Pet Bowl – $10<br>" +
-      "• Pet Toy – $8",
+      "💰 <b>Price List</b><br>" +
+      "Dog Collar: $15<br>Pet Bowl: $10<br>Pet Toy: $8",
       "bot"
     );
 
   } else if (message.includes("material")) {
     addMessage(
-      "📦 Product materials:<br>" +
-      "• Dog Collars – Nylon & leather<br>" +
-      "• Pet Bowls – Stainless steel & BPA-free plastic<br>" +
-      "• Pet Toys – Non-toxic rubber",
+      "📦 <b>Materials Used</b><br>" +
+      "• Durable nylon & leather<br>" +
+      "• BPA-free plastic<br>" +
+      "• Safe non-toxic rubber",
       "bot"
     );
 
   } else if (message.includes("contact")) {
     addMessage(
-      "📞 You can contact us via Instagram DM or email:<br>" +
-      "📧 milkapetshop@email.com",
+      "📞 <b>Contact Us</b><br>" +
+      "Instagram DM<br>📧 milkapetshop@email.com",
       "bot"
     );
 
   } else {
     addMessage(
-      "🐶 I'm happy to help! You can ask about our products, prices, or materials.",
+      "🐶 Ask me about products, prices, materials, or contact info!",
       "bot"
     );
   }
