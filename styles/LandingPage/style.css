@@ -1,0 +1,368 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+:root {
+  --bg-main: #EFF6F4;
+  --bg-soft: #E4E9EC;
+  --bg-muted: #DFE5E5;
+
+  --primary: #88BFBA;
+  --primary-dark: #859A9E;
+
+  --text-main: #000000;
+  --text-dark: #323232;
+  --text-muted: #8F877F;
+
+  --border-light: #C2C6C6;
+  --surface: #ffffff;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg-main);
+  color: var(--text-dark);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  background: var(--surface) !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.navbar-brand {
+  color: var(--primary) !important;
+}
+
+.nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0.3);
+}
+/* =========================
+   LANDING PAGE
+========================= */
+
+.landing {
+  min-height: 100vh;
+  padding: 120px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-soft), var(--bg-main));
+}
+
+.landing img{
+  width: 100%;
+  margin-bottom: 24px;
+  margin-top: 0px;
+}
+
+.landing h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.landing p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.shop-btn {
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.shop-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+.products {
+  padding: 60px 24px 40px;
+}
+
+.products h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--text-main);
+}
+
+/* Use cleaner grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+/* Minimal card like ASOS */
+.product-card {
+  position: relative;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+/* Replace placeholder box with real image */
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+
+
+/* Product text */
+.product-card .price {
+  font-weight: 600;
+  margin-top: 8px;
+  color: var(--text-dark);
+}
+
+.product-card .desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.heart {
+  font-size: 30px;
+  padding: 6px;
+}
+
+/* =========================
+   ABOUT & CONTACT
+========================= */
+.about, .contact {
+  padding: 60px 24px;
+  text-align: center;
+  background: var(--bg-soft);
+}
+
+.about h2, .contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.about p, .contact p {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+/* =========================
+   FLOATING CHAT BUTTON
+========================= */
+.chat-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* =========================
+   CHAT CONTAINER
+========================= */
+.chat-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 360px;
+  height: 520px;
+  background: var(--surface);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 2000;
+}
+
+.chat-container.show {
+  display: flex;
+}
+
+/* CHAT HEADER */
+.chat-header {
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 14px 14px 0 0;
+}
+
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* CHAT BODY */
+.chat-box {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+}
+
+.bot-msg,
+.user-msg {
+  max-width: 80%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.bot-msg {
+  background: var(--bg-muted);
+  color: var(--text-dark);
+}
+
+.user-msg {
+  background: var(--primary);
+  color: #fff;
+  margin-left: auto;
+}
+
+/* QUICK ACTIONS */
+.quick-actions {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.quick-actions button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: var(--bg-soft);
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+}
+
+.quick-actions button:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* CHAT INPUT */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid var(--border-light);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  font-size: 0.9rem;
+}
+
+.chat-input button {
+  margin-left: 8px;
+  padding: 8px 14px;
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 700px) {
+
+  .navbar {
+    flex-direction: column;
+    
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .landing {
+    padding: 140px 16px 24px 16px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chat-container {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .chat-header {
+    border-radius: 0;
+    padding: 16px;
+  }
+
+  .chat-float-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+
+ 
+  }
+}
